@@ -1,5 +1,28 @@
+/* 设置文档的外边距和内间距都为0，并去除空袭 */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+/* 标签选择器，标签名称 */
 /* id选择器*/
 #main{
-    height: 100px;
-    background-color: red;
+    height: 100vh;
+    background-image: url(../images/bg.jpg);
+    /* 图片在容器中的位置x,y */
+    background-position: center;
+    /* 背景图片在容器中的位置 */
+    background-size: cover;
+    /* 背景图片的重复方式 */
+    /* background-repeat: no-repeat; */
+}
+#d{
+    height: 200px;
+    background-color: white;
+    margin: 20px;
+}
+#c{
+    height: 200px;
+    background-color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
 }
