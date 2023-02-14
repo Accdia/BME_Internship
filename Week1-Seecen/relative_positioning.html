@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #gg1 {
+        position: fixed;
+        top: 150px;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background-image: url(images/28.jpg);
+        text-align: right;
+        background-size: cover;
+      }
+      #gg2 {
+        position: fixed;
+        top: 300px;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-image: url(images/28.jpg);
+        text-align: right;
+        background-size: cover;
+      }
+      #box {
+        text-align: center;
+        background-color: blueviolet;
+        width: 100px;
+        /* 块级标签可以margin:auto居中 */
+        margin: auto;
+        position: relative;
+      }
+      #ewm {
+        position: absolute;
+        /* 相对于父元素的位置 */
+        top: 20px;
+        left: -40px;
+        width: 180px;
+        height: 220px;
+        background-image: url(images/28.jpg);
+        background-position: center;
+        background-size: cover;
+        /* 不显示 */
+        display: none;
+      }
+      /* 鼠标指到box时，找到box的子节点ewm */
+      #box:hover > #ewm {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <a href="">手机版</a>
+      <div id="ewm"></div>
+    </div>
+    <div id="gg1">
+      <a
+        href="https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4"
+        target="_blank"
+        >关闭</a
+      >
+    </div>
+    <div id="gg2">
+      <a
+        href="https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4"
+        target="_blank"
+        >关闭</a
+      >
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis
+      perferendis eaque dolorem, fugiat ipsa voluptates nulla assumenda laborum
+      deleniti aliquid, vero earum ex velit dolores, blanditiis enim ad
+      consequuntur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Voluptatem quae sunt laboriosam voluptas numquam! Quae vel doloribus ullam
+      commodi quod iusto nam ipsa ex, odio omnis sapiente alias maxime in! Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Est, atque iusto rem
+      molestias fuga aut? Quae rem magni sit officiis, dolores iure. Et
+      consectetur ab sunt dolore, aut incidunt nostrum!Lorem ipsum dolor sit
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia soluta
+      exercitationem ab placeat adipisci molestias, inventore, doloremque
+      distinctio perspiciatis fugit voluptate repellendus eos a, officiis magnam
+      nesciunt blanditiis. Laudantium, eveniet? Lorem ipsum dolor sit amet
+      consectetur, adipisicing elit. Vel, nisi maiores. Amet consectetur laborum
+      corporis perferendis molestiae porro non rerum debitis reprehenderit,
+      fugit fugiat libero temporibus iste voluptatibus, ipsum velit. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Unde, odit. Exercitationem
+      placeat maxime magnam at in reiciendis fugit a, necessitatibus porro,
+      quidem eligendi expedita rem consectetur nisi deleniti asperiores
+      consequatur. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      Perspiciatis, dolorum odit magnam dicta omnis facere facilis ea rerum
+      quidem consequuntur consectetur velit reprehenderit eos! Magnam magni
+      porro ut inventore impedit.
+    </div>
+  </body>
+</html>
