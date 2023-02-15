@@ -1,47 +1,97 @@
+@font-face {
+  font-family: "nchuzt";
+  src: url(../font/fyxs.ttf) format("truetype");
+}
+.nchuzt {
+  font-family: "nchuzt" !important;
+  font-size: 14px;
+  font-style: normal;
+}
+
 /* 设置文档的外边距和内间距都为0，并去除空袭 */
-html,body{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 /* 标签选择器，标签名称 */
 /* id选择器*/
-#main{
-    height: 100vh;
-    background-image: url(../images/bg.jpg);
-    /* 图片在容器中的位置x,y */
-    background-position: center;
-    /* 背景图片在容器中的位置 */
-    background-size: cover;
-    /* 背景图片的重复方式 */
-    /* background-repeat: no-repeat; */
+#main {
+  height: 100vh;
+  background-image: url(../images/bg.jpg);
+  /* 图片在容器中的位置x,y */
+  background-position: center;
+  /* 背景图片在容器中的位置 */
+  background-size: cover;
+  /* 背景图片的重复方式 */
+  /* background-repeat: no-repeat; */
 }
-#d{
-    height: 200px;
-    background-color: white;
-    margin: 20px;
+#footer {
+  background-image: url(../images/foot_bg.png);
+  background-size: 100%, 100%;
+  height: 100px;
+  /* 需设置宽度 */
+  width: 100%;
+  height: 27vh;
+  position: absolute;
+  bottom: 0;
+  /* 子级继承父级属性 */
+  color: white;
+  text-align: center;
+  padding-top: 76px;
+  box-sizing: border-box;
 }
-#c{
-    height: 200px;
-    background-color: white;
-    padding-left: 40px;
-    box-sizing: border-box;
+#copyright {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  font-size: Arial, "微软雅黑";
 }
-#footer{
-    background-image: url(../images/foot_bg.png);
-    background-size: 100%,100%;
-    height: 100px;
-    /* 需设置宽度 */
-    width: 100%;
-    height: 27vh;
-    position:absolute;
-    bottom: 0;
-    /* 子级继承父级属性 */
+#isjk {
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+#menu {
+    width: 1230px;
+    margin: auto;
+    position: relative;
+}
+#items {
+    top: 61px;
+    width:530px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+}
+#items a {
+    background-color: rgba(38,104,170,0.67);
+    border-radius: 10px;
+    text-decoration: none;
+    /* 转成块级标签 */
+    display: block;
     color: white;
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
     text-align: center;
-    padding-top:70px;
+    padding-top: 15px;
     box-sizing: border-box;
 }
-#copyright{
+.zh1{
+    font-size: 36px !important;
+}
+.zh2{
     font-size: 14px;
-    letter-spacing: 1px;
+    position: relative;
+    top: 1px;
+}
+.zh3{
+    font-size: 32px !important;
+    position: relative;
+    top: 1px;
+    margin-bottom: 5px;
 }
