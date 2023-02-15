@@ -26,3 +26,22 @@ html,body{
     padding-left: 40px;
     box-sizing: border-box;
 }
+#footer{
+    background-image: url(../images/foot_bg.png);
+    background-size: 100%,100%;
+    height: 100px;
+    /* 需设置宽度 */
+    width: 100%;
+    height: 27vh;
+    position:absolute;
+    bottom: 0;
+    /* 子级继承父级属性 */
+    color: white;
+    text-align: center;
+    padding-top:70px;
+    box-sizing: border-box;
+}
+#copyright{
+    font-size: 14px;
+    letter-spacing: 1px;
+}
