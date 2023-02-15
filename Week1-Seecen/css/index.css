@@ -52,46 +52,46 @@ body {
   letter-spacing: 1px;
 }
 #menu {
-    width: 1230px;
-    margin: auto;
-    position: relative;
+  width: 1230px;
+  margin: auto;
+  position: relative;
 }
 #items {
-    top: 61px;
-    width:530px;
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    right: 0;
+  top: 61px;
+  width: 530px;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
 }
 #items a {
-    background-color: rgba(38,104,170,0.67);
-    border-radius: 10px;
-    text-decoration: none;
-    /* 转成块级标签 */
-    display: block;
-    color: white;
-    width: 80px;
-    height: 80px;
-    font-size: 14px;
-    text-align: center;
-    padding-top: 15px;
-    box-sizing: border-box;
+  background-color: rgba(38, 104, 170, 0.67);
+  border-radius: 10px;
+  text-decoration: none;
+  /* 转成块级标签 */
+  display: block;
+  color: white;
+  width: 80px;
+  height: 80px;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 15px;
+  box-sizing: border-box;
 }
-.zh1{
-    font-size: 36px !important;
+.zh1 {
+  font-size: 36px !important;
 }
-.zh2{
-    font-size: 14px;
-    position: relative;
-    top: 1px;
+.zh2 {
+  font-size: 14px;
+  position: relative;
+  top: 1px;
 }
-.zh3{
-    font-size: 32px !important;
-    position: relative;
-    top: 1px;
-    margin-bottom: 5px;
+.zh3 {
+  font-size: 32px !important;
+  position: relative;
+  top: 1px;
+  margin-bottom: 5px;
 }
