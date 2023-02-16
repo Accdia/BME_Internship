@@ -148,6 +148,14 @@ body {
   border-top: 1px solid #ddd;
   transform: rotate(45deg);
 }
+#list {
+  border: 1px solid red;
+  width: 1230px;
+  position: absolute;
+  left: calc(100% - 1230px) / 2;
+  top: 200px;
+  display: flex;
+}
 .zh1 {
   font-size: 36px !important;
 }
