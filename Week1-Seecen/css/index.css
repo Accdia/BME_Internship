@@ -80,6 +80,73 @@ body {
   text-align: center;
   padding-top: 15px;
   box-sizing: border-box;
+  transition: all .2s;
+  position: relative;
+}
+#items a:hover {
+  background-color: white;
+  color:rgb(51, 99, 160);
+  margin-top: -5px;
+  box-shadow: 0 2 20px black;
+
+}
+.ewm {
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  background-image: url(../images/hlw.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 138px, 138px;
+  position: absolute;
+  left: -50%;
+  top: 105px;
+  display: none;
+  border: 1px solid #ddd;
+}
+#items a:hover .ewm {
+  display: block;
+}
+.ewm::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 10px);
+  top: -11px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  transform: rotate(45deg);
+}
+.ewm1 {
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  background-image: url(../images/wx.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 138px, 138px;
+  position: absolute;
+  left: -50%;
+  top: 105px;
+  display: none;
+  border: 1px solid #ddd;
+}
+#items a:hover .ewm1{
+  display: block;
+}
+.ewm1::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 10px);
+  top: -11px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  transform: rotate(45deg);
 }
 .zh1 {
   font-size: 36px !important;
