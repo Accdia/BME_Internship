@@ -1,0 +1,73 @@
+a .ani_linear,
+a .ani_linear_small,
+a .ani_linear_big {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 50;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+a .ani_showHide {
+  fill: #fff;
+}
+
+a:hover .ani_linear {
+  stroke-dasharray: 6000;
+  stroke-dashoffset: 6000;
+  animation: dash 2s linear forwards;
+}
+
+a:hover .ani_linear_small {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 2s linear forwards;
+}
+
+a:hover .ani_linear_big {
+  stroke-dasharray: 8000;
+  stroke-dashoffset: 8000;
+  animation: dash 2s linear forwards;
+}
+
+a:hover .ani_showHide {
+  animation: fadeIn .8s .1s ease both;
+}
+
+a:hover .svg_small .ani_linear {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: dash 2s linear forwards;
+}
+
+a:hover .svg_small .ani_linear_small {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: dash 2s linear forwards;
+}
+
+a:hover .svg_small .ani_linear_big {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: dash 2s linear forwards;
+}
+
+a .svg_small {
+  display: block;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
