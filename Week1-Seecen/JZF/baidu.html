@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            margin: auto;
+            position: relative;
+        }
+        #menu1{
+            width: 400px;
+            list-style-type: none;
+            position: absolute;
+            left: 0px;
+            margin: 5px;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff!important;
+        }
+        #menu2{
+            width: 120px;
+            list-style-type: none;
+            position: absolute;
+            right: 20px;
+            margin: 5px;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff!important;
+        }
+        #menu1 a{
+            width: 48px;
+            height: 24px;
+            padding-top: 2px;
+            background-color: #fff;
+            display: block;
+            text-align: center;
+            font-size: 13px;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        #menu2 a{
+            width: 48px;
+            height: 24px;
+            padding-top: 2px;
+            background-color: #fff;
+            display: block;
+            text-align: center;
+            font-size: 13px;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        #denlu{
+            border-radius: 8px;
+            background-color: #4e6ef2 !important;
+        }
+        .dl{
+            top: 1px;
+            color:#fff;
+            position: relative;
+        }
+        .zs{
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <ul id="menu1">
+            <li>
+                <li><a href="">
+                    <div class="zs">新闻</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">hao123</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">地图</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">贴吧</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">视频</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">图片</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">网盘</div>
+                </a></li>
+                <li><a href="">
+                    <div class="zs">更多</div>
+                </a></li>
+            </li>
+        </ul>
+        <ul id="menu2">
+            <li>
+                <li><a href="">
+                    <div class="zs">设置</div>
+                </a></li>
+                <li><a id="denlu" href="">
+                    <div class="dl" >登录</div>
+                </a></li>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
