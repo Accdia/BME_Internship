@@ -1,0 +1,329 @@
+html {
+    overflow-x: hidden;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+body {
+    font-size: 75%;
+    font-family: Tahoma, Arial;
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+:link, :visited, ins {
+    text-decoration: none;
+}
+
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+#wapper {
+    width: 100%;
+    height: 135px;
+    position: relative;
+    z-index: 20;
+    background: url("../images/wrapper_bg.png") repeat-x;
+}
+
+#header {
+    width: 1000px;
+    height: 135px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#product {
+    width: 1000px;
+    height: 30px;
+    float: left;
+}
+
+#topNav {
+    width: 800px;
+    height: 30px;
+    float: left;
+}
+
+#topNav ul li{
+    float: left;
+}
+
+#topNav ul li div {
+    float: left;
+}
+
+.topNavName a {
+    float: left;
+    height: 16px;
+    font-size: 12px;
+    color: #7a7a7a;
+    font-family: '宋体';
+    margin-top: 7px;
+}
+
+.separator {
+    width: 25px;
+    height: 25px;
+    background: url("../images/separator.png") center 2px no-repeat;
+}
+
+#usrInfo {
+    width: 200px;
+    height: 30px;
+    float: left;
+}
+
+#usrInfo ul li {
+    float: right;
+}
+
+#usrInfo ul li div {
+    float: left;
+}
+
+#usrInfo ul li div a {
+    max-width: 1000px;
+    float: left;
+    display: block;
+    font-size: 12px;
+    color: #7a7a7a;
+    margin-top: 7px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#logo a {
+    width: 193px;
+    height: 40px;
+    float: left;
+    margin-top: 15px;
+    background: url("../images/logo.png") no-repeat;
+}
+
+#searchInput {
+    width: 325px;
+    height: 32px;
+    background: url("../images/search_box.png") no-repeat;
+    border: medium none;
+    outline: 0 none;
+    margin: 0px 0 0 6px;
+    padding-left: 10px;
+    position: absolute;
+    top: 50px;
+    left: 675px;
+    overflow: hidden;
+    line-height: 16px;
+}
+
+#searchInput:focus {
+    background: url("../images/search_box_focus.png") no-repeat;
+}
+
+#navList {
+    width: 1000px;
+    height: 35px;
+    float: left;
+    margin-top: 15px;
+}
+
+#navList ul li {
+    height: 35px;
+    float: left;
+    margin-right: 30px;
+}
+
+#navList ul li a{
+    height: 35px;
+    float: left;
+}
+
+#navList ul li a:hover {
+    background-color: #e94f0d;
+}
+
+#navList ul li a.current {
+    background-color: #e94f0d;
+}
+
+.navName {
+    float: left;
+    margin: 5px 21px 0;
+    color: white;
+    font-size: 18px;
+    font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+    cursor: pointer;
+}
+
+#zmeit {
+    position: relative;
+}
+
+#zmeitNew {
+    position: absolute;
+    background: url("../images/new.png") no-repeat 0px 0px;
+    width: 26px;
+    height: 14px;
+    top: -16px;
+    left: 143px;
+}
+
+/* Start wapperMain */
+
+#wapperMain {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bannerSides {
+    width: 100%;
+    height: 400px;
+}
+
+.bannerSide {
+    z-index: 9;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 400px;
+    left: 0px;
+}
+
+#bannerSides0 {
+    background: #F9533f url("../images/bg.png") no-repeat center center;
+    display: block;
+}
+
+.bannerSwap {
+    z-index: 8;
+    margin: 0 auto;
+    width: 1000px;
+    height: 374px;
+    position: relative;
+}
+
+#banner0 #downloadBtn {
+    position: absolute;
+    right: 120px;
+    bottom: 35px;
+    display: inline-block;
+    width: 245px;
+    height: 56px;
+    cursor: pointer;
+    background: url("../images/download.png") 0 0 no-repeat;
+    z-index: 2;
+    text-indent: -9999px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+#banner0 #downloadBtn:hover {
+    background: url("../images/download_hover.png") 0 0 no-repeat;
+}
+
+#bannerHover {
+    position: absolute;
+    right: 120px;
+    bottom: 35px;
+    display: inline-block;
+    width: 245px;
+    height: 56px;
+    background: url(http://imedl.sogoucdn.com/index/download_hover.png) 0 0 no-repeat;
+    z-index: 1;
+}
+
+#banner0 #upDate {
+    position: absolute;
+    right: 195px;
+    bottom: 125px;
+    width: 164px;
+    text-align: left;
+    line-height: 18px;
+    opacity: 0.8;
+    color: #27364D;
+    font-size: 15px;
+    font-family: '微软雅黑','Arial';
+}
+
+#banner0 #textVersion {
+    position: absolute;
+    right: 0;
+    opacity: 0.5;
+    bottom: 286px;
+    text-align: right;
+    line-height: 20px;
+    color: #27364D;
+    font-size: 16px;
+    font-family: '微软雅黑','Arial';
+}
+
+#banner0 #verSpec a {
+    position: absolute;
+    right: 130px;
+    bottom: 125px;
+    text-align: right;
+    line-height: 20px;
+    /* color: #27364D; */
+    color:rgb(61,129,186);
+    text-decoration: underline;
+    font-size: 16px;
+    font-family: '微软雅黑','Arial';
+}
+
+#banner0 #verSupp {
+    position: absolute;
+    left: 641px;
+    bottom: 98px;
+    text-align: right;
+    line-height: 20px;
+    opacity: 0.8;
+    color: #27364D;
+    font-size: 15px;
+    font-family: '微软雅黑','Arial';
+}
+
+#banner0 #mobDownload {
+    position: absolute;
+    right: 1px;
+    bottom: 35px;
+    display: inline-block;
+    width: 93px;
+    height: 22px;
+    background: url("../images/mobile_download.png") 0 0 no-repeat;
+    z-index: 2;
+}
+
+#banner0 #mobDownload:hover {
+    background: url("../images/mobile_download_hover.png") 0 0 no-repeat;
+}
+
+#banner0 #qrcode {
+    position: absolute;
+    right: 2px;
+    bottom: 60px;
+    display: inline-block;
+    width: 89px;
+    height: 89px;
+    background: url("../images/ewm.jpg") no-repeat scroll 50% 50%;
+}

@@ -1,0 +1,83 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 1230px;
+    height: 100vh;
+}
+
+#nav {
+    width: 450px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#navItems {
+    top: 10px;
+    width: 450px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+}
+
+#navItems li {
+    border-radius: 10px;
+    text-decoration: none;
+    /* 转成块级标签 */
+    display: block;
+    color: black;
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#login {
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#loginItems {
+    top: 10px;
+    width: 150px;
+    /* height: 50px; */
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+}
+
+#loginItems li{
+    border-radius: 10px;
+    text-decoration: none;
+    /* 转成块级标签 */
+    display: block;
+    color: black;
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    text-align: center;
+    padding : 5px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.zh {
+    background-color: rgba(38, 104, 170, 0.67);
+}

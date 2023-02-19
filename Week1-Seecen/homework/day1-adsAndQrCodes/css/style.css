@@ -1,0 +1,67 @@
+/* 设置文档的外边距和内间距都为0,去除空隙 */
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* 标签选择器,  标签名称 */
+/* id选择器，#id名称 */
+/* 找到id=main的盒子 */
+#main {
+    /* 自动适应屏幕百分百高度 */
+    height: 100vh;
+    background-image: url("../images/bg.png");
+    /* 背景图片在容器中的位置: 居中显示*/
+    background-position: center;
+    /* 背景图片尺寸: 适应屏幕 */
+    background-size: cover;
+    /* 图片不重复铺 */
+    background-repeat: no-repeat;
+}
+
+#ad1 {
+    width: 350px;
+    height: 350px;
+    background-image: url("../images/limitBreak.jpg");
+    background-size: cover;
+    text-align: right;
+    position: fixed;
+    /* 右下角广告 */
+    right: 0px;
+    bottom: 0px;
+}
+
+#ad2 {
+    width: 400px;
+    height: 250px;
+    background-image: url("../images/vme50.jpg");
+    background-size: cover;
+    text-align: right;
+    position: fixed;
+    /* 左下角广告 */
+    left: 0px;
+    bottom: 0px;
+}
+
+#box {
+    text-align: center;
+    width: 100px;
+    background-color: aqua;
+    margin: auto;
+    position: relative;
+}
+
+#qrcode {
+    position: absolute;
+    top: 60px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    display: none;
+    background-image: url("../images/Bitcoin.png");
+    background-size: cover;
+}
+
+#box:hover #qrcode {
+    display: block;
+}
