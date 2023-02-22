@@ -25,4 +25,9 @@ smartwear\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 smartwear\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 smartwear\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 smartwear\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+smartwear\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+smartwear\main.o: ../Core/Inc/usart.h
+smartwear\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 smartwear\main.o: ../Core/Inc/gpio.h
+smartwear\main.o: ../Core/Inc/key.h
+smartwear\main.o: ../Core/Inc/led.h

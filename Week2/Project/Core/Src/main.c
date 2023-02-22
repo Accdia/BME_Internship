@@ -19,11 +19,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "key.h"
+#include "led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,7 +66,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+    uint8_t i = 0;
+    uint16_t usCount = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -85,6 +88,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -96,15 +100,31 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,GPIO_PIN_RESET);//PB5-LED1亮输出低电平
-	  HAL_Delay(500);//定义延时
-	  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,GPIO_PIN_SET);//PB5-LED1灭输出高电平
-	  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,GPIO_PIN_RESET);
-	  HAL_Delay(500);
-	  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,GPIO_PIN_RESET);
-	  HAL_Delay(500);
-	  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,GPIO_PIN_SET);
+    HAL_Delay(1);
+    /* 运行指示灯：100ms */
+    usCount++;
+    if (usCount % 100 == 0)    i = !i;
+    if (i)    LED3_ON();
+    else      LED3_OFF();
+      
+    /* 获取键值 */
+    uint8_t ucKeyVal = KEY_Scan();
+    switch (ucKeyVal)
+    {
+      case KEY_UP_PRES: printf("KEY_UP_PRES\r\n");
+          break;
+      case KEY2_PRES:   printf("KEY2_PRES\r\n");
+          break;
+    }
+    
+    /* 串口接收数据处理 */
+    if (g_ucUart1RxFlag)
+    {
+        printf("UART1_RX:%s\r\n", g_ucUart1RxBuf);
+        g_ucUart1RxFlag = 0;
+        g_ucUart1RxCnt = 0;
+    }
+    
   }
   /* USER CODE END 3 */
 }
