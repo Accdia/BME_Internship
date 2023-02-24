@@ -6,26 +6,27 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2023 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "key.h"
 #include "led.h"
+#include "key.h"
+#include "HeartRateConversion.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -66,8 +67,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-    uint8_t i = 0;
     uint16_t usCount = 0;
+    uint16_t adValue;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -89,8 +90,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-
+  TEMP_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,10 +106,22 @@ int main(void)
     HAL_Delay(1);
     /* 运行指示灯：100ms */
     usCount++;
-    if (usCount % 100 == 0)    i = !i;
-    if (i)    LED3_ON();
-    else      LED3_OFF();
+
+    /* 红外测温采集 */
+    //GetTempInfo();
       
+    /* 心率采集 */
+    HAL_ADC_Start(&hadc1);                //启动AD
+    HAL_ADC_PollForConversion(&hadc1, 1); //启动一次A/D转换
+    adValue = HAL_ADC_GetValue(&hadc1);   //读取结果  
+    HeartRate_conversion(adValue);        //心率算法
+    if (QS == 1)
+    {
+        printf("BPM=%d\n", BPM);
+        QS = 0;
+    }
+    
+
     /* 获取键值 */
     uint8_t ucKeyVal = KEY_Scan();
     switch (ucKeyVal)
@@ -117,7 +132,7 @@ int main(void)
           break;
     }
     
-    /* 串口接收数据处理 */
+    /* 串口1接收数据处理 */
     if (g_ucUart1RxFlag)
     {
         printf("UART1_RX:%s\r\n", g_ucUart1RxBuf);
@@ -137,6 +152,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -152,6 +168,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -162,6 +179,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -202,5 +225,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

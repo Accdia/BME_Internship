@@ -117,8 +117,8 @@ int main(void)
     usCount++;
 
     /* 红外测温采集 */
-    //GetTempInfo();
-      
+    GetTempInfo();
+    HAL_Delay(500);
     /* 心率采集 */
     HAL_ADC_Start(&hadc1);                //启动AD
     HAL_ADC_PollForConversion(&hadc1, 1); //启动一次A/D转换

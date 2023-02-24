@@ -30,17 +30,22 @@ extern "C" {
 
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "temp.h"
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart1;
 
+extern UART_HandleTypeDef huart2;
+
 /* USER CODE BEGIN Private defines */
-extern uint8_t g_ucUart1RxBuf[512];
+extern uint8_t g_ucUart1RxBuf[100];
 extern uint16_t g_ucUart1RxCnt;
 extern uint8_t g_ucUart1RxFlag;
+
 /* USER CODE END Private defines */
 
 void MX_USART1_UART_Init(void);
+void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
